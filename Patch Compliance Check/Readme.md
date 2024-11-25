@@ -66,7 +66,8 @@ If you are trying to execute any command from Server A to Server B, then make su
 
 After setting the same password either on the source server or destination server, you will have to log off and login to the Source server again as previous logon session will have old passwords cached.
 
-## Note: To securely pass a username and password with Invoke-Command when targeting a workgroup server, you can use a PSCredential object. 
+## Note: 
+To securely pass a username and password with Invoke-Command when targeting a workgroup server, you can use a PSCredential object. 
 
 # Here’s how you can do it:
 
@@ -82,26 +83,25 @@ $Username = "YourUsername"
 $Credential = New-Object System.Management.Automation.PSCredential ($Username, $Password)
 ```
 
-
-# Use the Credential with Invoke-Command:
+Use the Credential with Invoke-Command:
 ---------------
 ```powershell
 Invoke-Command -ComputerName "192.168.1.100" -Credential $Credential -ScriptBlock { (Get-WmiObject win32_computersystem).Name }
 ```
 ## Example Script
 ---------------------------------
-# Here’s a complete example script that securely passes the username and password:
+Here’s a complete example script that securely passes the username and password:
 
-# #Convert the plain text password to a secure string
+# Convert the plain text password to a secure string
 ```powershell
 $Password = "YourPassword" | ConvertTo-SecureString -AsPlainText -Force
 ```
-# #Create the PSCredential object
+# Create the PSCredential object
 ```powershell
 $Username = "YourUsername"
 $Credential = New-Object System.Management.Automation.PSCredential ($Username, $Password)
 ```
-# #Use Invoke-Command with the credential
+# Use Invoke-Command with the credential
 ```powershell
 Invoke-Command -ComputerName "192.168.1.100" -Credential $Credential -ScriptBlock {
     (Get-WmiObject win32_computersystem).Name
@@ -110,7 +110,9 @@ Invoke-Command -ComputerName "192.168.1.100" -Credential $Credential -ScriptBloc
 --------------------------------
 
 ## Storing Credentials Securely
+
 For better security, avoid hardcoding passwords in your scripts. Instead, you can store the credentials securely and retrieve them when needed:
+
 ---------------
 # Save the Credential to a File:
 ```powershell
