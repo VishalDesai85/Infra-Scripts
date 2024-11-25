@@ -1,4 +1,4 @@
-##For Domain Joined Machines
+#For Domain Joined Machines
 
 Ensure to create a file computers.txt under folder C:\temp or any path of your choice and update computer names under computers.txt file. Only hostnames one in each line will do.
 Example:
@@ -8,7 +8,7 @@ node03-2019
 
 #Also, enter the latest Security Update patch IDs in the script below line #17, #18, #19 and #20 if applicable before you run it to get exact compliance checks done
 
-#Enter the latest Security Patches and OOB patches against which you wish check do patch compliance check
+#Enter the latest Security Patches and OOB patches against which you wish check do patch compliance check 
 $2016OS = ""
 $2019OS = ""
 $2022OS = ""
