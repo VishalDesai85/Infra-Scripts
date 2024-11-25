@@ -1,0 +1,6 @@
+"ServerName","OperatingSystem","Secureboot"
+"AD01","Microsoft Windows Server 2019 Standard","True"
+"AD02","Microsoft Windows Server 2019 Standard","True"
+"Node1-2019","Microsoft Windows Server 2019 Standard","True"
+"Node2-2019","Microsoft Windows Server 2019 Standard","True"
+"Node3-2019","Server Not Responding/Communicating","As the Server is not responding/communicating Secure Boot Status cannot be fetched"
