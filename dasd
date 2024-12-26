@@ -1,0 +1,54 @@
+[33mcommit 303a51728d6975c9a6b79312c4943941e98d1781[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m)[m
+Author: VishalDesai85 <vishaldesai.85@gmail.com>
+Date:   Thu Dec 26 09:58:45 2024 +0530
+
+    Renamed servicename variable
+
+[33mcommit b804139bf228d5a8c19334f1902a0b349922f5bf[m[33m ([m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Merge: 69c1801 1498a40
+Author: VishalDesai85 <vishaldesai.85@gmail.com>
+Date:   Mon Nov 25 21:33:56 2024 +0530
+
+    Merge branch 'main' of https://github.com/VishalDesai85/Infra-Scripts
+
+[33mcommit 69c18016295098f1cfb24f240d1d1afe0bb699d3[m
+Author: VishalDesai85 <vishaldesai.85@gmail.com>
+Date:   Mon Nov 25 21:32:51 2024 +0530
+
+    Create Readme.md
+
+[33mcommit 1498a40d24f6331850744c0cc79a8c05be509659[m
+Author: VishalDesai85 <vishaldesai.85@gmail.com>
+Date:   Mon Nov 25 21:32:13 2024 +0530
+
+    Update Readme.md
+
+[33mcommit 3557f622753ed2c647d0b10e37dacc03a0759aa4[m
+Author: VishalDesai85 <vishaldesai.85@gmail.com>
+Date:   Mon Nov 25 21:23:22 2024 +0530
+
+    Update Readme.md
+
+[33mcommit c65802aac240c1a16e679dd7f52b12b4b0d38c5e[m
+Author: VishalDesai85 <vishaldesai.85@gmail.com>
+Date:   Mon Nov 25 20:59:01 2024 +0530
+
+    Update Readme.md
+
+[33mcommit 5aeb87f8aea1e0298b6d0ac5aa1e52a87b293ea2[m
+Author: VishalDesai85 <vishaldesai.85@gmail.com>
+Date:   Mon Nov 25 20:58:06 2024 +0530
+
+    Create Readme.md
+
+[33mcommit 863c124b022f24c8114facb607e454d3286591e9[m
+Author: VishalDesai85 <vishaldesai.85@gmail.com>
+Date:   Mon Nov 25 20:54:14 2024 +0530
+
+    Patch Compliance Checker
+
+[33mcommit e1320b2be3fe2f3d7ea414da3c983ed2be5ae30b[m
+Author: VishalDesai85 <vishaldesai.85@gmail.com>
+Date:   Mon Nov 25 19:10:10 2024 +0530
+
+    Script to Check Secure Boot status
