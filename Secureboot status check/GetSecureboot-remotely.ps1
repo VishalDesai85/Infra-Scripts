@@ -1,5 +1,5 @@
 ﻿# Define the service name you want to check
-$serviceName = "ClusSvc1"
+#$serviceName = "ClusSvc1"
 $date = Get-Date -Format "MM-dd-yyyy_HH-mm-ss"
 #write-host $date  
 
