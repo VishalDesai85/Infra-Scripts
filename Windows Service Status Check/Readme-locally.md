@@ -1,3 +1,32 @@
+# ServiceStatus Check-Locally
+This script would be handy if you have some tool like Landesk or any remote execution tool where they would have agent installed on member servers and you execut the script one single server basis.
+
+This PowerShell script checks the Service status of Failover Cluster and exports the results to a CSV file.
+
+# Define the service name you want to check
+In our example, we are checking cluster service status
+
+
+```powershell
+$serviceName = "ClusSvc"
+```
+
+## Prerequisites
+
+- PowerShell 5.1 or later
+- Necessary permissions to run remote commands on the servers
+
+## Usage
+
+1. **Create a temp folder locally on the server on any drive of your choice**
+     - Example: C:\temp
+<br> This is the directory where the output would get exported 
+
+2. **Run the Script:**
+   - Open PowerShell with administrative privileges.
+   - Execute the script.
+
+```powershell
 # Define the service name you want to check
 $serviceName = "ClusSvc"
 $date = Get-Date -Format "MM-dd-yyyy_HH-mm-ss"
@@ -60,3 +89,4 @@ $results = @()
 $results | Export-Csv -Path "C:\temp\ServiceStatus$date.csv" -NoTypeInformation
 
 Write-Output "Service status has been exported to C:\temp\ location"
+
