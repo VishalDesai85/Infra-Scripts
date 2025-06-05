@@ -27,6 +27,9 @@ The script also includes logic to send this report via email.
 ## Output
 - HTML report file: `Checkpoint_Report_<hostname>_<date>.html`
 - Email with the report attached
+- Below is the sample report
+  ![image](https://github.com/user-attachments/assets/a7978468-7564-46f0-82c1-82c27df0b7bc)
+
 
 ## Customization
 - Modify the `$ReportPath` variable to change the directory where the report is saved.
