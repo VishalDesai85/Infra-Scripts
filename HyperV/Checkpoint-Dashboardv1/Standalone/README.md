@@ -2,7 +2,7 @@
 # **Hyper-V Checkpoint Dashboard Script**
 
 ## Purpose
-This PowerShell script generates an HTML report detailing the checkpoints (snapshots) for Virtual Machines running on a Standalone Hyper-V Base Machine. The report provides information about the first and last snapshot creation dates and the total count of snapshots for each VM on each active cluster node.
+This PowerShell script generates an HTML report detailing the checkpoints (snapshots) for Virtual Machines running on a Standalone Hyper-V Base Machine. The report provides information about the first and last snapshot creation dates and the total count of snapshots for each VM on the HyperV Host.
 
 The script also includes logic to send this report via email.
 
