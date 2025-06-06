@@ -157,4 +157,4 @@ ElseIf (Get-Cluster)
     }
 
 
-Send-MailMessage -To winadminmlx@icicbankltd.com -Cc kumar.saurabh1@ext.icicibank.com, arvind.kawale@ext.icicibank.com -From write-host $env:COMPUTERNAME@icicibankltd.com -Body (Get-Content "$File" |Out-String) -Attachments "$File" -SmtpServer 10.151.56.38 -Subject "HyperV CheckPoint Dashboard $env:COMPUTERNAME" -BodyAsHtml
+Send-MailMessage -To wintel@yourdomain.com -Cc lead@yourdomain.com, manager@yourdomain.com -From write-host $env:COMPUTERNAME@yourdomain.com -Body (Get-Content "$File" |Out-String) -Attachments "$File" -SmtpServer 10.151.56.38 -Subject "HyperV CheckPoint Dashboard $env:COMPUTERNAME" -BodyAsHtml
