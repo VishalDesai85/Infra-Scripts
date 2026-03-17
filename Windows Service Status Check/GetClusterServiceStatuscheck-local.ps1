@@ -1,4 +1,4 @@
-#Requires -Version 5.0
+﻿#Requires -Version 5.0
 # Script: Check local ClusSvc status and cluster name
 # Exports result to C:\temp\
 

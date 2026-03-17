@@ -1,0 +1,4 @@
+"ServerName","ServiceName","Status","Clustername"
+"Node1-2022","ClusSvc","Running","Win2022clu"
+"Node2-2022","ClusSvc","Running","Win2022clu"
+"Node3-2022","ClusSvc","Running","Win2022clu"

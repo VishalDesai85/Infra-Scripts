@@ -1,4 +1,4 @@
-﻿# Define the service name you want to check
+# Define the service name you want to check
 $serviceName = "ClusSvc"
 $date = Get-Date -Format "MM-dd-yyyy_HH-mm-ss"
 #write-host $date  
@@ -23,17 +23,35 @@ foreach ($server in $servers) {
             
             if ($status -eq 'Running') {
                 $Clustername = (Invoke-Command -ComputerName $server -ScriptBlock { (Get-Cluster).Name })
+
+                # Fetch cluster roles (cluster groups) running on this cluster
+                try {
+                    $roleObjects = Invoke-Command -ComputerName $server -ScriptBlock {
+                        Get-ClusterGroup | Select-Object -Property Name, State
+                    }
+                    if ($roleObjects) {
+                        $ClusterRoles = ($roleObjects | ForEach-Object { "$($_.Name) [$($_.State)]" }) -join '; '
+                    }
+                    else {
+                        $ClusterRoles = "No role is running on the server"
+                    }
+                }
+                catch {
+                    $ClusterRoles = "Unable to retrieve cluster roles: $_"
+                }
             }
             else {
                 $Clustername = Invoke-Command -ComputerName $server -ScriptBlock {
-                    (Get-ItemProperty -Path 'HKLM:\SYSTEM\ControlSet001\Services\ClusSvc\Parameters' -Name ClusterName).ClusterName
+                    (Get-ItemProperty -Path 'HKLM:\SYSTEM\CurrentControlSet\Services\ClusSvc\Parameters' -Name ClusterName).ClusterName
                 }
+                $ClusterRoles = "N/A - ClusSvc is not Running"
             }
         }
         catch {
             # If there's an error (e.g., service not found, Cannot find path, etc), set status to "Not Found"
             $status = "Not Found"
             $Clustername = "Cluster service is not installed/Configured"
+            $ClusterRoles = "N/A - Cluster role is not Configured"
         }
      
         
@@ -42,13 +60,15 @@ foreach ($server in $servers) {
         # If the server is not responding, set status to "Not Responding"
         $status = "Server Not Responding/Communicating"
         $Clustername = "As the Server is not responding/communicating Cluster Name cannot be fetched"
+        $ClusterRoles = "N/A - Server is not responding/communicating"
     }
     # Add the result to the array
     $results += [PSCustomObject]@{
-        ServerName  = $server
-        ServiceName = $serviceName
-        Status      = $status
-        Clustername = $Clustername
+        ServerName   = $server
+        ServiceName  = $serviceName
+        Status       = $status
+        ClusterName  = $Clustername
+        ClusterRoles = $ClusterRoles
     }
 }
 
